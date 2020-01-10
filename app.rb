@@ -17,7 +17,8 @@ get '/projects' do
     erb :projects
 end
 post '/projects' do
-    Project.new(params).save
+    par_1 = params[:project_title]
+    Project.new({:title => par_1}).save
     redirect to '/projects'
 end
 
