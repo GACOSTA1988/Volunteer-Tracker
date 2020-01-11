@@ -46,8 +46,9 @@ end
 
 #////////////////// Volunteers routes /////////////////////
 post '/projects/:id' do
-    params[:project_id] = params[:id]
-    Volunteer.new(params).save
+    par_1 = params[:volunteer_name]
+    par_2 = params[:id]
+    Volunteer.new({:name => par_1, :project_id => par_2}).save
     redirect to "/projects/#{params[:id]}"
 end
 
