@@ -31,7 +31,8 @@ get '/projects/:id' do
     erb :projects_ID
 end
 patch '/projects/:id' do
-    Project.find(params[:id].to_i).update(params)
+    par_1 = params[:project_title]
+    Project.find(params[:id].to_i).update({:title => par_1})
     redirect to "/projects/#{params[:id]}"
 end
 delete '/projects/:id' do
