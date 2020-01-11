@@ -58,7 +58,8 @@ get '/projects/:id/volunteers/:volunteer_id' do
     erb :project_ID_volunteer_ID
 end
 patch '/projects/:id/volunteers/:volunteer_id' do
-    Volunteer.find(params[:volunteer_id].to_i).update(params)
+    par_1 = params[:volunteer_name]
+    Volunteer.find(params[:volunteer_id].to_i).update({:name => par_1})
     redirect to "/projects/#{params[:id]}"
 end
 
